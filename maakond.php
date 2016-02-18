@@ -37,6 +37,7 @@
             The leadership displayed by Aries is most impressive, so don't be surprised if they can rally the
             troops against seemingly insurmountable odds.</p>
     </div>
+
 </div>
 
 <?php include("footer.php"); ?>
