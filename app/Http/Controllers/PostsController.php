@@ -45,7 +45,7 @@ class PostsController extends Controller
         return back();
     }
 
-    public function addpost(Request $request) {
+    public function addPost(Request $request) {
         $post = new Post();
 
         $post -> subject = $request -> subject;

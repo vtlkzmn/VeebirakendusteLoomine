@@ -1,5 +1,3 @@
-{{ Command::run(array('migrate')) }}
-
 @extends('layout')
 
 @section('content')
@@ -27,7 +25,7 @@
 
     <h3> Add a new Post!</h3>
 
-    <form method="POST" action="/posts/{{ $post -> id }}/addPost">
+    <form method="POST" action="/posts/addPost">
 
         <div class="form-group">
             <textarea name="subject" class="form-control"></textarea>

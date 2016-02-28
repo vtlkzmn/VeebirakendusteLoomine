@@ -21,5 +21,5 @@ Route::get('posts/{post}', 'PostsController@show');
 Route::post('posts/{post}/reviews', 'PostsController@addReview');
 Route::post('posts/{post}/deleteReviews', 'PostsController@deleteReviews');
 Route::post('posts/{post}/deletePost', 'PostsController@deletePost');
-Route::post('posts/{post}/addPost', 'PostsController@addPost');
+Route::post('posts/addPost', 'PostsController@addPost');
 
