@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+    <h1>
+        @if(count($posts) === 0)
+            <h1>There are no posts yet! :(</h1>
+        @endif
+    </h1>
 
     @foreach($posts as $post)
         <div class="panel panel-primary col-sm-6">
@@ -23,9 +28,9 @@
         </div>
     @endforeach
 
-    <h3> Add a new Post!</h3>
 
-    <form method="POST" action="/posts/addPost">
+    <form method="POST" action="/posts/addPost" class="col-sm-12">
+        <h3> Add a new Post!</h3>
 
         <div class="form-group">
             <textarea name="subject" class="form-control"></textarea>

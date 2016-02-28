@@ -46,12 +46,11 @@ class PostsController extends Controller
     }
 
     public function addPost(Request $request) {
-        $post = new Post();
 
-        $post -> subject = $request -> subject;
-        $post -> body = $request -> body;
-
-        DB::table('posts')->insert($post);
+        DB::table('posts')->insert([
+            'subject' => $request -> subject,
+            'body' => $request -> body
+        ]);
 
         return back();
     }
