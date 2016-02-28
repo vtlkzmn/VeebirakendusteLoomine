@@ -1,3 +1,5 @@
+{{ Command::run(array('migrate')) }}
+
 @extends('layout')
 
 @section('content')
@@ -22,4 +24,22 @@
             </div>
         </div>
     @endforeach
+
+    <h3> Add a new Post!</h3>
+
+    <form method="POST" action="/posts/{{ $post -> id }}/addPost">
+
+        <div class="form-group">
+            <textarea name="subject" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <textarea name="body" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Add Post</button>
+        </div>
+    </form>
+
 @stop
