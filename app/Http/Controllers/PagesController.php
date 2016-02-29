@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('/');
+        return view('welcome');
     }
 
     public function states()
