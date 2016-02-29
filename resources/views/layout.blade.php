@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xml:lang="en">
 
 <head>
     <title>Veebirakenduste projekt</title>
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand"><img
+                <a href="/" class="navbar-brand" alt="Homepage"><img
                             src="http://www.wbg.ee/WWW_files/files/user_files/graphics/logo_footer@2x.png"></a>
             </div>
 
@@ -54,15 +54,15 @@
                     <li><a href="/contact">KONTAKT</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>LOGIN</b> <span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>LOGIN</strong> <span
                                     class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="social-buttons">
-                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                            <a href="#" class="btn btn-fb"><em class="fa fa-facebook"></em> Facebook</a>
+                                            <a href="#" class="btn btn-tw"><em class="fa fa-twitter"></em> Twitter</a>
                                         </div>
                                         <br>
                                         <form class="form" role="form" method="post" action="#"
@@ -87,7 +87,7 @@
                                         </form>
                                     </div>
                                     <div class="bottom text-center">
-                                        New here ? <a href="#"><b>Join Us</b></a>
+                                        New here ? <a href="#"><strong>Join Us</strong></a>
                                     </div>
                                 </div>
                             </li>

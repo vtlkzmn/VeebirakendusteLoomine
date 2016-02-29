@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
     <h1>
         @if(count($posts) === 0)
             <h1>There are no posts yet! :(</h1>
