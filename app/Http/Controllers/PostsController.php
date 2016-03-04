@@ -23,12 +23,9 @@ class PostsController extends Controller
     public function addReview(Request $request, Post $post)
     {
         $review = new Review();
-
         $review->post_id = $post->id;
         $review->body = $request->post_body;
-
         $post->reviews()->save($review);
-
         return back();
     }
 
@@ -39,17 +36,19 @@ class PostsController extends Controller
         return back();
     }
 
-    public function deletePost($post) {
+    public function deletePost($post)
+    {
         DB::table('posts')->where('id', $post)->delete();
 
         return back();
     }
 
-    public function addPost(Request $request) {
+    public function addPost(Request $request)
+    {
 
         DB::table('posts')->insert([
-            'subject' => $request -> subject,
-            'body' => $request -> body
+            'subject' => $request->subject,
+            'body' => $request->body
         ]);
 
         return back();
