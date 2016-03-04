@@ -30,8 +30,8 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand" alt="Homepage"><img
-                            src="http://www.wbg.ee/WWW_files/files/user_files/graphics/logo_footer@2x.png"></a>
+                <a href="/" class="navbar-brand"><img alt="Homepage"
+                            src="img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,11 +78,12 @@
                                                 <input type="password" class="form-control" id="exampleInputPassword2"
                                                        placeholder="Password" required>
                                                 <br>
-                                                <div class="help-block text-right"><a href="">Forgot the password?</a>
+                                                <div class="help-block text-right"><a href="">Forgot the password? Too bad..</a>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                <button type="submit" class="btn btn-primary btn-block">Register here</button>
                                             </div>
                                             <br>
                                         </form>
