@@ -17,7 +17,7 @@
 
 <div id="wrap">
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default">
         <div class="container">
 
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,8 +30,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand"><img alt="Homepage"
-                            src="img/logo.png"></a>
+                <a href="/" class="navbar-brand"><img alt="Kodu" src="img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,7 +54,7 @@
                     <li><a href="/contact">KONTAKT</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>LOGIN</strong> <span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>LOGI SISSE</strong> <span
                                     class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
@@ -78,18 +77,17 @@
                                                 <input type="password" class="form-control" id="exampleInputPassword2"
                                                        placeholder="Password" required>
                                                 <br>
-                                                <div class="help-block text-right"><a href="">Forgot the password? Too bad..</a>
+                                                <div class="help-block text-right"><a href="">Unustasid parooli? Kehv
+                                                        lugu..</a>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                                <button type="submit" class="btn btn-primary btn-block">Register here</button>
+                                                <button type="submit" class="btn btn-primary btn-block">Logi sisse</button>
+                                                <button type="submit" class="btn btn-primary btn-block">Registreeru
+                                                </button>
                                             </div>
                                             <br>
                                         </form>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        New here ? <a href="#"><strong>Join Us</strong></a>
                                     </div>
                                 </div>
                             </li>
@@ -106,10 +104,10 @@
         @yield('content')
     </div>
 
-    <nav class="navbar-default" id="footer">
+    <nav class="navbar navbar-default" id="footer">
         <div class="container">
             <div class="col-sm-12 text-center navbar-text">
-                FIRMA NIMI | AADRESS | +372 59035823 | mart.magi@outlook.com
+            MTÜ WBG | J. Liivi 2 | +372 59035823 | mart.magi@outlook.com
             </div>
         </div>
     </nav>

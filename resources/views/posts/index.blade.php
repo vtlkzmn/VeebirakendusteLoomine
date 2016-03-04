@@ -34,11 +34,11 @@
         <h3> Add a new Post!</h3>
 
         <div class="form-group">
-            <textarea name="subject" class="form-control"></textarea>
+            <textarea placeholder="Post subject" name="subject" class="form-control"></textarea>
         </div>
 
         <div class="form-group">
-            <textarea name="body" class="form-control"></textarea>
+            <textarea placeholder="Post body" maxlength="140" name="body" class="form-control"></textarea>
         </div>
 
         <div class="form-group">

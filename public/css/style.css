@@ -10,17 +10,23 @@ body {
 }
 
 #footer {
-    border-radius: 0;
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #e7e7e7;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    height: 30px;
 }
 
-#footer.text-center .navbar .navbar-nav {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    border-radius: 0;
+/* Override default for footer */
+.navbar {
+    margin-bottom: 0;
+}
+
+@media (max-width: 379px) {
+    #footer {
+        height: 60px;
+    }
 }
 
 .container {
@@ -40,6 +46,10 @@ body {
 
 .panel-heading h3 {
     padding-top: 8px;
+}
+
+ul.nav a:hover {
+    color: #880000 !important;
 }
 
 @media (max-width: 1089px) {
