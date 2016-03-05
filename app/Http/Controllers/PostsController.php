@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Review;
-use App\Post;
+use App\Models\Review;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use \DB;
 

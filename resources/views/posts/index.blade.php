@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Add Post</button>
+            <button type="submit" class="btn btn-primary" title="You will not be able to change it (mb in the future)!">Add Post</button>
         </div>
     </form>
 
