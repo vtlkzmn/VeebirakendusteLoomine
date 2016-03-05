@@ -46,4 +46,9 @@
         </div>
     </form>
 
+    <div>
+        <button id="colorButton1" type="button" class="btn btn-primary" onclick="bonusButton()" >Boonus</button>
+        <p id="points"></p>
+    </div>
+
 @stop
