@@ -30,4 +30,17 @@
         </a>
     </div>
 
+    <h1>Mingi jama et punkte saada </h1>
+
+    <!-- JavaScripti punktide saamiseks -->
+    <div>
+        <button type="button" class="btn btn-primary" onclick="bonusButton()">Javascripti punktid</button>
+        <p id="points"></p>
+    </div>
+
+    <!-- Agregeeritud andmete esitamine -->
+    <div>
+        Viimase postituse ID on
+        {{ \DB::table('posts')->max('id') }}
+    </div>
 @stop
