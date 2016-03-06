@@ -9,15 +9,9 @@ use \DB;
 
 class PostsController extends Controller
 {
-    public function index()
+    public function reviews(Post $post)
     {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
-    }
-
-    public function show(Post $post)
-    {
-        return view('posts.show', compact('post'));
+        return view('reviews', compact('post'));
     }
 
     public function addReview(Request $request, Post $post)
@@ -36,14 +30,14 @@ class PostsController extends Controller
         return back();
     }
 
-    public function deletePost($post)
+    public function deleteEstate($post)
     {
         DB::table('posts')->where('id', $post)->delete();
 
         return back();
     }
 
-    public function addPost(Request $request)
+    public function addEstate(Request $request)
     {
 
         DB::table('posts')->insert([

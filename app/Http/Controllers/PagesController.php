@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Post;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -13,17 +13,22 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    public function states()
+    public function addEstate() {
+        return view('addEstate');
+    }
+
+    public function reviews() {
+        return view('reviews');
+    }
+
+    public function estates()
     {
-        return view('states');
+        $posts = Post::all();
+        return view('estates', compact('posts'));
     }
 
     public function contact()
     {
         return view('contact');
-    }
-
-    public function reviews() {
-        return view('reviews.index');
     }
 }

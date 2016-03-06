@@ -41,6 +41,6 @@
     <!-- Agregeeritud andmete esitamine -->
     <div>
         Viimase postituse ID on
-        {{ \DB::table('posts')->max('id') }}
+        {{ \DB::table('posts')->max('id') }} (Agregeeritud andmete esitamine)
     </div>
 @stop

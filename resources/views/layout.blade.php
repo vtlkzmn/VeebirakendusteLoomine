@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="js/ourAwesomeScripts.js"></script>
+    <script src="/js/ourAwesomeScripts.js"></script>
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
@@ -38,20 +38,8 @@
             <div class="collapse navbar-collapse" id="navHeaderCollapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">AVALEHT<span class="sr-only">(current)</span></a></li>
-                    <li><a href="/posts">POSTITUSED</a></li>
-                    <li class="dropdown" id="dropdown-products">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">MAAKONNAD<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/states">Tallinn</a></li>
-                            <li><a href="/states">Tartu</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/states">Pärnu</a></li>
-                            <li><a href="/states">Narva</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/states">Muud</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/estates">ELAMUD</a></li>
+                    <li><a href="/addEstate">LISA ELAMU</a></li>
                     <li><a href="/contact">KONTAKT</a></li>
 
                     <li class="dropdown">

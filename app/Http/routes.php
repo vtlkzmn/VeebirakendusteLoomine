@@ -1,25 +1,20 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+/** Page routing */
 
 Route::get('/', 'PagesController@home');
-Route::get('states', 'PagesController@states');
+Route::get('estates', 'PagesController@estates');
+Route::get('addEstate', 'PagesController@addEstate');
 Route::get('contact', 'PagesController@contact');
+Route::get('estates/{post}', 'PostsController@reviews');
 
 
-Route::get('posts', 'PostsController@index');
-Route::get('posts/{post}', 'PostsController@show');
-Route::post('posts/{post}/reviews', 'PostsController@addReview');
-Route::post('posts/{post}/deleteReviews', 'PostsController@deleteReviews');
-Route::post('posts/{post}/deletePost', 'PostsController@deletePost');
-Route::post('posts/addPost', 'PostsController@addPost');
+/** DB alteration */
 
+//Adding to DB
+Route::post('estates/{post}/reviews', 'PostsController@addReview');
+Route::post('estates/addEstate', 'PostsController@addEstate');
+
+//Deleting from DB
+Route::post('estates/{post}/deleteReviews', 'PostsController@deleteReviews');
+Route::post('estates/{post}/deleteEstate', 'PostsController@deleteEstate');

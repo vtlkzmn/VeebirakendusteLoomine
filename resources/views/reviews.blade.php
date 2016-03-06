@@ -19,20 +19,20 @@
 
             <h3> Add a new Review!</h3>
 
-            <form method="POST" action="/posts/{{ $post -> id }}/reviews">
+            <form method="POST" action="/estates/{{ $post -> id }}/reviews">
 
                 <div class="form-group">
                     <textarea name="post_body" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add Review</button>
+                    <button type="submit" class="btn btn-primary pull-left">Add Review</button>
                 </div>
             </form>
 
-            <form method="POST" action="/posts/{{$post -> id}}/deleteReviews">
+            <form method="POST" action="/estates/{{$post -> id}}/deleteReviews">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Obliterate this particular motherfucker</button>
+                    <button type="submit" class="btn btn-primary pull-right">Delete all Reviews</button>
                 </div>
             </form>
 
