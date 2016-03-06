@@ -7,4 +7,5 @@ Homestead.json
 .idea/
 .gitignore
 .env
+.env.example
 config/database.php
