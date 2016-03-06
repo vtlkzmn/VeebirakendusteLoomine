@@ -8,9 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" defer></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/abiinfo.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/googlemaps.css">
+    <script src="js/ourAwesomeScripts.js"></script>
 </head>
 
 <body>
