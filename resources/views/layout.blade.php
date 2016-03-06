@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand"><img alt="Kodu" src="img/logo.png"></a>
+                <a href="/" class="navbar-brand"><img alt="Kodu" src="/img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
