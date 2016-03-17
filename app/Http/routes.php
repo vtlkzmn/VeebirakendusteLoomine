@@ -18,3 +18,21 @@ Route::post('estates/addEstate', 'PostsController@addEstate');
 //Deleting from DB
 Route::post('estates/{post}/deleteReviews', 'PostsController@deleteReviews');
 Route::post('estates/{post}/deleteEstate', 'PostsController@deleteEstate');
+
+Route::get('addEstate/getRequest', function(){
+   if (Request::ajax()){
+       return 'Comleted with AJAX';
+   }
+});
+
+//Route::get('estates/getRequest', function(){
+//   if (Request::ajax()){
+//       return 'Comleted with AJAX';
+//   }
+//});
+
+Route::post('addEstate/addEstate', function(){
+   if (Request::ajax()){
+       return Response::json(Request::all());
+   }
+});
