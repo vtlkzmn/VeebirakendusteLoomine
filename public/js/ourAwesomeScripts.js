@@ -4,6 +4,16 @@ function bonusButton() {
     document.getElementById("points").innerHTML = "Boonus: " + boonus;
 }
 
+$(window).load(
+	function() {
+		$('div[data-addsrc]').each(function(index){
+			var src = $(this).attr('data-addsrc');
+			$(this).html('<img class="img-responsive" alt="" src="' +src+ '">');
+		})
+	}
+)
+
+
 //fuck, ei tea miks ei tööta kui php failist kustutan scripti ja siin uncommentin... proovige plz)
 //
 //    $.ajaxSetup({
