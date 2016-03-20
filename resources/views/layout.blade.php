@@ -4,7 +4,7 @@
 <head>
     <title>Veebirakenduste projekt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/googlemaps.css">
+    <link rel="stylesheet" type="text/css" href="/css/media.css">
 </head>
 
 <body>
@@ -40,14 +41,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navHeaderCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">AVALEHT<span class="sr-only">(current)</span></a></li>
-                    <li><a href="/estates">ELAMUD</a></li>
-                    <li><a href="/addEstate">LISA ELAMU</a></li>
-                    <li><a href="/contact">KONTAKT</a></li>
+                    <li><a href="/">{{ strtoupper(trans('header.homepage')) }}</a></li>
+                    <li><a href="/estates">{{ strtoupper(trans('header.estates')) }}</a></li>
+                    <li><a href="/addEstate">{{ strtoupper(trans('header.addEstate')) }}</a></li>
+                    <li><a href="/contact">{{ strtoupper(trans('header.contact')) }}</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>LOGI SISSE</strong> <span
-                                    class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown"><strong>{{ strtoupper(trans('header.login')) }}</strong><span
+                                        class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
                                 <div class="row">
@@ -84,6 +86,22 @@
                                     </div>
                                 </div>
                             </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="/img/flags/{{ \App::getLocale() }}_logo.png">
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (\Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                    <li>
+                                        <a href="/lang/{{ $lang }}"><img
+                                                    src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
+                                    </li>
+                                @endif
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
