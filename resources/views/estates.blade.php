@@ -24,6 +24,7 @@
                     </tr>
                     </thead>
 
+                    <section class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
                     <!-- Create a table row for each estate -->
                     @foreach($posts as $post)
                         <tbody>
@@ -49,6 +50,8 @@
                         </td>
                         </tbody>
                     @endforeach
+                        {!! $posts->render() !!}
+                    </section>
                 </table>
             @endif
         </div>

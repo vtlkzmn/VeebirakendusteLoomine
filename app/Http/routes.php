@@ -23,11 +23,6 @@ Route::group(['middleware' => ['web']], function () {
             return 'Completed with AJAX';
         }
     });
-    //Route::get('estates/getRequest', function(){
-    //   if (Request::ajax()){
-    //       return 'Comleted with AJAX';
-    //   }
-    //});
     Route::post('addEstate/addEstate', function () {
         if (Request::ajax()) {
             return Response::json(Request::all());

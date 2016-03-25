@@ -59,6 +59,9 @@
     </div>
 
 
-
+    {{--AJAX--}}
+    <div>
+        <button type="button" class="btn-warning" id="getRequest">AJAX</button>
+    </div>
 
 @stop

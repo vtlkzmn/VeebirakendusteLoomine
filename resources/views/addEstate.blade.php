@@ -27,36 +27,5 @@
         </div>
     </div>
 
-    <!-- AJAX -->
-    <div>
-        <button type="button" class="btn-warning" id="getRequest">getRequest</button>
-    </div>
 
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $(document).ready(function(){
-            $('#getRequest').click(function(){
-                $.get('addEstate/getRequest', function(data){
-                    console.log(data);
-                });
-            });
-            //siin on vaja veel mõtelda natuke, mingi pärast post ei toimu AJAXiga
-            $('#addEstate').submit(function(){
-                var subject = $('subject').val();
-                var name = $('name').val();
-                $.ajax({
-                    type: "POST",
-                    url: "addEstate/addEstate",
-                    data: {subject: subject, name: name},
-                    success: function(data){
-                        console.log(data);
-                    }
-                });
-            });
-        });
-    </script>
 @stop
