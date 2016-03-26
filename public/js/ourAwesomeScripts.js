@@ -13,27 +13,43 @@ $(window).load(
 	}
 )
 
+$(document).ready(function(){
+	$('#getRequest').click(function(){
+		$.get('addEstate/getRequest', function(data){
+			console.log(data);
+		});
+	});
+});
 
-//fuck, ei tea miks ei tööta kui php failist kustutan scripti ja siin uncommentin... proovige plz)
-//
-//    $.ajaxSetup({
-//        headers: {
-//            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//        }
-//    });
-//$(document).ready(function(){
-//    $('#getRequest').click(function(){
-//        $.get('addEstate/getRequest', function(data){
-//            console.log(data);
-//        });
-//    });
-//    $('#addEstate').submit(function(){
-//        var subject = $('subject').val();
-//        var name = $('name').val();
-//
-//        $.post('addEstate', {subject:subject, name:name}, function(data){
-//            console.log(data);
-//            $('#postRequestData').html(data);
-//        });
-//    });
-//});
+
+$(document).ready(function(){
+	$(window).scroll(fetchPosts);
+	function fetchPosts() {
+		var page = $('.endless-pagination').data('next-page');
+
+		if (page !== null) {
+			clearTimeout( $.data( this, "scrollCheck" ));
+
+			$.data( this, "scrollCheck", setTimeout(function() {
+				var scroll_position_for_posts_load = $(window).height() + $(window).scrollTop() + 100;
+
+				if(scroll_position_for_posts_load >= $(document).height()){
+					$.get(page, function(data){
+						$('.endless-pagination').data('next-page', data.next_page);
+						$('.posts').append(data.posts);
+					});
+				}
+			}, 350))
+		}
+	}
+});
+
+$.(document).ready(function(){
+	$('body').on('click', 'pagination a', function(e){
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$.get(url, function(data){
+			$('.posts').html(data);
+		});
+	});
+});

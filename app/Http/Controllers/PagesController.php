@@ -23,9 +23,19 @@ class PagesController extends Controller
         return view('reviews');
     }
 
-    public function estates()
+    protected $posts_per_page = 7;
+
+    public function estates(Request $request)
     {
-        $posts = Post::all();
+        $posts = Post::paginate($this->posts_per_page);
+
+        if ($request->ajax()){
+            return [
+                'posts' => view('ajax.estates', compact('posts'))->render(),
+                'next_page' => $posts->nextPageUrl()
+            ];
+        }
+
         return view('estates', compact('posts'));
     }
 

@@ -9,7 +9,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/contact', 'PagesController@contact');
     Route::get('/register', 'PagesController@register');
     Route::get('/estates/{post}', 'PostsController@reviews');
-    
+
     /** DB alteration */
     //Adding to DB
     Route::post('estates/{post}/reviews', 'PostsController@addReview');
@@ -24,11 +24,6 @@ Route::group(['middleware' => ['web']], function () {
             return 'Completed with AJAX';
         }
     });
-    //Route::get('estates/getRequest', function(){
-    //   if (Request::ajax()){
-    //       return 'Comleted with AJAX';
-    //   }
-    //});
     Route::post('addEstate/addEstate', function () {
         if (Request::ajax()) {
             return Response::json(Request::all());
@@ -36,11 +31,11 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     /** Language switching */
-    Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+    Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
 
     /** Authentication */
     Route::auth();
     Route::get('/home', 'HomeController@index');
-    
+
 });
 
