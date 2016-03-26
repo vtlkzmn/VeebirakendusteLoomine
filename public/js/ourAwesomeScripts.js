@@ -1,17 +1,18 @@
-var boonus = 0;
+/** JavaScript bonus */
+/* var boonus = 0;
 function bonusButton() {
     boonus += 1;
     document.getElementById("points").innerHTML = "Boonus: " + boonus;
-}
+} */
 
 $(window).load(
 	function() {
-		$('div[data-addsrc]').each(function(index){
+		$('div[data-addsrc]').each(function(){
 			var src = $(this).attr('data-addsrc');
 			$(this).html('<img class="img-responsive" alt="" src="' +src+ '">');
 		})
 	}
-)
+);
 
 $(document).ready(function(){
 	$('#getRequest').click(function(){
@@ -44,7 +45,7 @@ $(document).ready(function(){
 	}
 });
 
-$.(document).ready(function(){
+$(document).ready(function(){
 	$('body').on('click', 'pagination a', function(e){
 		e.preventDefault();
 		var url = $(this).attr('href');

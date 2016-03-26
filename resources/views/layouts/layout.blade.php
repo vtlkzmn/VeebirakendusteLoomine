@@ -43,18 +43,15 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">{{ strtoupper(trans('header.homepage')) }}</a></li>
                     <li><a href="/estates">{{ strtoupper(trans('header.estates')) }}</a></li>
-                    @if (!Auth::guest())
-                        <li><a href="/addEstate">{{ strtoupper(trans('header.addEstate')) }}</a></li>
-                    @endif
+                    <li><a href="/addEstate">{{ strtoupper(trans('header.addEstate')) }}</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/contact">{{ strtoupper(trans('header.contact')) }}</a></li>
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">{{ strtoupper(trans('header.login')) }}</a></li>
-                    @else
+                    @if (!Auth::guest())
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
@@ -62,24 +59,24 @@
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
-                    @endif
+                        @endif
 
-                    <!-- Flags -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/img/flags/{{ \App::getLocale() }}_logo.png">
-                        </a>
-                        <ul class="dropdown-menu">
-                            @foreach (\Config::get('languages') as $lang => $language)
-                                @if ($lang != App::getLocale())
-                                    <li>
-                                        <a href="/lang/{{ $lang }}"><img
-                                                    src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    </li>
+                                <!-- Flags -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/img/flags/{{ \App::getLocale() }}_logo.png">
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach (\Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                        <li>
+                                            <a href="/lang/{{ $lang }}"><img
+                                                        src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </li>
                 </ul>
             </div>
 
@@ -87,10 +84,12 @@
         </div>
     </nav>
 
+    <!-- Main container -->
     <div class="container" style="margin-top: 15px;">
         @yield('content')
     </div>
 
+    <!-- Footer -->
     <nav class="navbar navbar-default" id="footer">
         <div class="container">
             <div class="col-sm-12 text-center navbar-text">

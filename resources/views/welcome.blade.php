@@ -40,6 +40,8 @@
         </div>
     </div>
 
+    <h2>Ajaxi päring:</h2>
+
     {{--AJAX--}}
     <div>
         <button type="button" class="btn-warning" id="getRequest">AJAX</button>
