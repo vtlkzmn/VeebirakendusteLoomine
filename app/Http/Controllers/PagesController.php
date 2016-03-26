@@ -13,11 +13,13 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    public function addEstate() {
+    public function addEstate()
+    {
         return view('addEstate');
     }
 
-    public function reviews() {
+    public function reviews()
+    {
         return view('reviews');
     }
 
@@ -30,5 +32,10 @@ class PagesController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function register()
+    {
+        return view('auth.register');
     }
 }

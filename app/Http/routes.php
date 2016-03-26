@@ -7,8 +7,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/estates', 'PagesController@estates');
     Route::get('/addEstate', 'PagesController@addEstate');
     Route::get('/contact', 'PagesController@contact');
+    Route::get('/register', 'PagesController@register');
     Route::get('/estates/{post}', 'PostsController@reviews');
-
+    
     /** DB alteration */
     //Adding to DB
     Route::post('estates/{post}/reviews', 'PostsController@addReview');
@@ -36,4 +37,10 @@ Route::group(['middleware' => ['web']], function () {
 
     /** Language switching */
     Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+
+    /** Authentication */
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
+    
 });
+

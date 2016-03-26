@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('content')
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -30,8 +30,8 @@
         </a>
     </div>
 
-     <!-- Leheosade hilisem laadimine -->
-    
+    <!-- Leheosade hilisem laadimine -->
+
     <h2>Leheosade hilisem laadimine: </h2>
 
     <div>
@@ -39,26 +39,5 @@
             <img class="img-responsive" src="img/add_loading_small.jpg"/>
         </div>
     </div>
-
-    <!-- JavaScripti punktide saamiseks -->
-
-    <h2>JS lehel muudatuste tegemine: </h2>
-
-    <div>
-        <button type="button" class="btn btn-primary" onclick="bonusButton()">Javascripti punktid</button>
-        <p id="points"></p>
-    </div>
-
-    <!-- Agregeeritud andmete esitamine -->
-
-    <h2>Agregreeritud andmete esitamine: </h2>
-
-    <div>
-        Viimase postituse ID on
-        {{ \DB::table('posts')->max('id') }} (Agregeeritud andmete esitamine)
-    </div>
-
-
-
 
 @stop

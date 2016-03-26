@@ -7,4 +7,6 @@ return [
     'addEstate' => 'lisa elamu',
     'contact' => 'kontakt',
     'login' => 'logi sisse',
+    'register' => 'registreeru',
+    
 ];

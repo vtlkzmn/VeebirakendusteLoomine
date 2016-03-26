@@ -15,11 +15,13 @@
         margin-bottom: 0;
     }
 
+    /*
     .navbar .navbar-nav {
         display: inline-block;
         float: none;
         vertical-align: top;
     }
+    */
 
     .navbar .navbar-collapse {
         text-align: center;
@@ -40,31 +42,13 @@
 
 @media (min-width: 1090px) {
 
-    .navbar-default {
-        border-radius: 0;
-    }
-
     .navbar-nav {
-        padding: 20px 10px 10px;
-        margin: 0 auto -10px;
+        padding-top: 20px;
         display: table;
-        table-layout: fixed;
-        float: none;
-    }
-
-    .navbar-nav > li {
-        border-radius: 0;
-        margin-left: 10px;
-        margin-right: 1px;
-    }
-
-    .navbar-brand {
-        padding: 0;
     }
 
     .navbar-brand > img {
-        height: 100%;
-        margin-top: 20px;
+        margin-top: 6px;
     }
 
 }
