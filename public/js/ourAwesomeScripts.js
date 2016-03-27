@@ -23,6 +23,8 @@ $(document).ready(function(){
 });
 
 
+
+//uue posti lehe laadimine toimub ilma terve lehte uue laadimist AJAXi kaudu
 $(document).ready(function(){
 	$(window).scroll(fetchPosts);
 	function fetchPosts() {
