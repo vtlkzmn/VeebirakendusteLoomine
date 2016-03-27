@@ -1,38 +1,27 @@
-<table class="table table-responsive table-striped">
+@foreach($posts as $post)
 
-    <!-- Table head -->
-    <thead>
-        <th style="width:25%;"></th>
-        <th style="width:25%;"></th>
-        <th style="width:40%;"></th>
-        <th style="width:10%;"></th>
-    </thead>
+    <div class="div-table-row">
 
-    <section class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
-        <!-- Create a table row for each estate -->
-        @foreach($posts as $post)
-            <tbody>
-            <td>
-                TODO
-            </td>
-            <td>
-                <a href="/estates/{{ $post-> id }}">
-                    {{ $post -> subject }}
-                </a>
-            </td>
-            <td>
-                {{ $post -> body }}
-            </td>
-            <td>
-                <form method="POST" action="/estates/{{ $post -> id }}/deleteEstate">
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </form>
-            </td>
-            </tbody>
-        @endforeach
-    </section>
-</table>
+        <div class="div-table-col">TODO</div>
+
+        <div class="div-table-col">
+            <a href="/estates/{{ $post-> id }}">
+                {{ $post -> subject }}
+            </a>
+        </div>
+
+        <div class="div-table-col">{{ $post -> body }}</div>
+
+        <div class="div-table-col-remove-button">
+            <form method="POST" action="/estates/{{ $post -> id }}/deleteEstate">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+@endforeach

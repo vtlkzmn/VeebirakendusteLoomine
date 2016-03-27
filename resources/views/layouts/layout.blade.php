@@ -4,7 +4,7 @@
 <head>
     <title>Veebirakenduste projekt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <meta name="csrf_token" content="{{ csrf_token() }}"/>
     <meta charset="UTF-8">
 
     <!-- Styles -->
@@ -13,6 +13,12 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/googlemaps.css">
     <link rel="stylesheet" type="text/css" href="/css/media.css">
+
+    <!-- JavaScripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/ourAwesomeScripts.js"></script>
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -100,11 +106,6 @@
 
 </div>
 
-<!-- JavaScripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/ourAwesomeScripts.js"></script>
 
 </body>
 

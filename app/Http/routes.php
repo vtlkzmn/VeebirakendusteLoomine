@@ -19,14 +19,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('estates/{post}/deleteEstate', 'PostsController@deleteEstate');
 
     /** Ajax */
-    Route::get('addEstate/getRequest', function () {
+    Route::get('/getRequest', function () {
         if (Request::ajax()) {
             return 'Completed with AJAX';
-        }
-    });
-    Route::post('addEstate/addEstate', function () {
-        if (Request::ajax()) {
-            return Response::json(Request::all());
         }
     });
 

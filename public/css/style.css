@@ -9,6 +9,34 @@ body {
     margin-bottom: 70px;
 }
 
+.div-table{
+    display:table;
+    width:auto;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:20px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+    display:table-row;
+    width:auto;
+    clear:both;
+
+}
+.div-table-col{
+    float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    width:200px;
+    border-bottom: 2px solid black;
+}
+
+.div-table-col-remove-button{
+    float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    width:200px;
+    alignment: top;
+    /*border-bottom: 2px solid black;*/
+}
+
 #footer {
     position: absolute;
     bottom: 0;

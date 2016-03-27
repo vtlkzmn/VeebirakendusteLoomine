@@ -16,7 +16,7 @@ $(window).load(
 
 $(document).ready(function(){
 	$('#getRequest').click(function(){
-		$.get('addEstate/getRequest', function(data){
+		$.get('/getRequest', function(data){
 			console.log(data);
 		});
 	});
@@ -38,19 +38,10 @@ $(document).ready(function(){
 					$.get(page, function(data){
 						$('.endless-pagination').data('next-page', data.next_page);
 						$('.posts').append(data.posts);
+                        console.log("AJAX works pretty good");
 					});
 				}
 			}, 350))
 		}
 	}
-});
-
-$(document).ready(function(){
-	$('body').on('click', 'pagination a', function(e){
-		e.preventDefault();
-		var url = $(this).attr('href');
-		$.get(url, function(data){
-			$('.posts').html(data);
-		});
-	});
 });
