@@ -6,14 +6,7 @@ function bonusButton() {
 } */
 
 
-$(window).load(
-	function() {
-		$('div[data-addsrc]').each(function(){
-			var src = $(this).attr('data-addsrc');
-			$(this).html('<img class="img-responsive" alt="" src="' +src+ '">');
-		})
-	}
-);
+
 
 /* data push */
 function poll(){
@@ -25,11 +18,20 @@ function poll(){
 
   setTimeout(function(){
     poll();
-  }, 3000); 
+  }, 10000); 
 
 }
 
-poll();
+$(window).load(function() {
+
+	var new_src = $('#leheosade_hilisem').attr('data-addsrc');
+	document.getElementById("leheosade_hilisem").src = new_src;
+
+	poll();
+	
+});
+
+
 
 
 

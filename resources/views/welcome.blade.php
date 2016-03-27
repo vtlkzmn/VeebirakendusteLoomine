@@ -36,8 +36,8 @@
     <h2>Leheosade hilisem laadimine: </h2>
 
     <div>
-        <div data-addsrc="img/add_loaded_small.jpg">
-            <img class="img-responsive" src="img/add_loading_small.jpg"/>
+        <div>
+            <img data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
         </div>
     </div>
 

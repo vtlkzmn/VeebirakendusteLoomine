@@ -9,6 +9,11 @@ body {
     margin-bottom: 70px;
 }
 
+#leheosade_hilisem{
+    height: 105px;
+    width:400px;  
+}
+
 .div-table{
     display:table;
     width:auto;
