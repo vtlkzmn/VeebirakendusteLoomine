@@ -32,5 +32,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index');
 
+    /* Data push */
+    Route::get("/getLatestEstate", "PostsController@getLatestEstate");
+
 });
 

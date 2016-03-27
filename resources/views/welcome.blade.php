@@ -30,6 +30,7 @@
         </a>
     </div>
 
+
     <!-- Leheosade hilisem laadimine -->
 
     <h2>Leheosade hilisem laadimine: </h2>
@@ -39,6 +40,14 @@
             <img class="img-responsive" src="img/add_loading_small.jpg"/>
         </div>
     </div>
+
+    <h2>Data push: </h2>
+    <div class="panel panel-default">
+        <div id="getLatestEstate" class="panel-body"></div>
+    </div>
+
+
+
 
     <h2>Ajaxi päring:</h2>
 

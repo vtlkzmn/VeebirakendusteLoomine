@@ -5,6 +5,7 @@ function bonusButton() {
     document.getElementById("points").innerHTML = "Boonus: " + boonus;
 } */
 
+
 $(window).load(
 	function() {
 		$('div[data-addsrc]').each(function(){
@@ -13,6 +14,25 @@ $(window).load(
 		})
 	}
 );
+
+/* data push */
+function poll(){
+  $.get("getLatestEstate",function(data){
+    $("#getLatestEstate").html("<b>Created:</b> " + data.created 
+    	+ "<br>" + "<b>Subject:</b> " + data.subject
+    	+ "<br>" + "<b>Body:</b> " + data.body);
+  });
+
+  setTimeout(function(){
+    poll();
+  }, 3000); 
+
+}
+
+poll();
+
+
+
 
 $(document).ready(function(){
 	$('#getRequest').click(function(){

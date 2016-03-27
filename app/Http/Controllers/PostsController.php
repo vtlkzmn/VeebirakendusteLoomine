@@ -7,6 +7,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use \DB;
 use Illuminate\Support\Facades\Redirect;
+use DateTime;
+
 
 class PostsController extends Controller
 {
@@ -43,9 +45,24 @@ class PostsController extends Controller
 
         DB::table('posts')->insert([
             'subject' => $request->subject,
-            'body' => $request->body
+            'body' => $request->body,
+            "created_at" => new DateTime
         ]);
 
         return back();
+    }
+
+    public function getLatestEstate(){
+        if(\Request::ajax()){
+            $newest_progress = DB::table("posts")->whereNotNull("created_at")->orderBy("created_at","desc")->first();
+            $created = $newest_progress->created_at;
+            $subject = $newest_progress->subject;
+            $body = $newest_progress->body;
+                return \Response::json(array(
+                    'created' => $created,
+                    'subject'   => $subject,
+                    'body'   => $body
+                ));
+        }
     }
 }
