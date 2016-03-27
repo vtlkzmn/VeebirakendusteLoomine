@@ -30,10 +30,14 @@ Route::group(['middleware' => ['web']], function () {
 
     /** Authentication */
     Route::auth();
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'HomeController@index'); //Redirects user back to page he was on before
 
     /* Data push */
     Route::get("/getLatestEstate", "PostsController@getLatestEstate");
 
+    /** Bank Link routing */
+    Route::get('/dbqueryview', 'BankController@bankQuery');
+    Route::post('callback/seb', 'BankController@callback');
+    Route::post('cancel/seb', 'BankController@cancel');
 });
 

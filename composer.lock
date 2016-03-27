@@ -4,9 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b10ddf5f9a846733a965f81347993a4a",
-    "content-hash": "a716953090155652a891a3f81ee3c8ff",
+    "hash": "ab008ad216920ab2bcd413fb23178396",
+    "content-hash": "36fa6dced68a5c34fd41728baae0b4ab",
     "packages": [
+        {
+            "name": "arturkp/laravel-banklinks",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ArturKp/laravel-banklinks.git",
+                "reference": "4a51964ef0728cbe2bac51ba7897163f2a18ea93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ArturKp/laravel-banklinks/zipball/4a51964ef0728cbe2bac51ba7897163f2a18ea93",
+                "reference": "4a51964ef0728cbe2bac51ba7897163f2a18ea93",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/support": "~5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ArturKp\\LaravelBanklinks\\": "src/ArturKp/LaravelBanklinks"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artur Käpp",
+                    "email": "arturkp@gmail.com"
+                }
+            ],
+            "description": "Estonian banklinks for Laravel 5",
+            "keywords": [
+                "banklinks"
+            ],
+            "time": "2015-12-14 07:43:54"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -221,7 +264,7 @@
         },
         {
             "name": "intervention/image",
-            "version": "dev-master",
+            "version": "2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
@@ -3175,9 +3218,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "intervention/image": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

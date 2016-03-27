@@ -56,4 +56,29 @@
         <button type="button" class="btn-warning" id="getRequest">AJAX</button>
     </div>
 
+    <h2>Andmebaasi Select-Join päring ja välja kommenteeritud insert</h2>
+
+    <div>
+        <?php
+        //Viimase elamu postituse ID
+        $maxId = DB::table('posts')->max('id');
+
+        //Lisab viimasele elamule review, aga välja kommenteeritud muidu tuleks liiga palju.. testisin, töötab..
+        /*
+        DB::table('reviews')->insert(
+                array('post_id' => $maxId,
+                        'body' => 'insert review')
+        );
+        */
+        $query = "SELECT * FROM posts INNER JOIN reviews on posts.id = " . $maxId . " AND reviews.post_id = " . $maxId;
+        $exec = DB::select(DB::raw($query));
+        ?>
+        @foreach($exec as $stat)
+            <ul>
+                <li> {{ $stat -> id }} </li>
+                <li> {{ $stat -> subject }} </li>
+                <li> {{ $stat -> body }} </li>
+            </ul>
+        @endforeach
+    </div>
 @stop

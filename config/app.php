@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        ArturKp\LaravelBanklinks\LaravelBanklinksServiceProvider::class,
 
         /*
          * Application Service Providers...

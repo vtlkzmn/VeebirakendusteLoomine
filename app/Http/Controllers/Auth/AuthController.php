@@ -28,7 +28,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/addEstate';
+    // If this is commented out, the user stays on the same page after logging in 
+    //protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
