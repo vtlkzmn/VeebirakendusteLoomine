@@ -1,6 +1,6 @@
 # Veebirakenduste loomine
 
-Mart Mägi, Harri Saar, Vitaly Kuzmin
+Mart Mägi, Harri Saar, Vitali Kuzmin
 
 [Testkeskkond](https://cryptic-ravine-26647.herokuapp.com)
 
