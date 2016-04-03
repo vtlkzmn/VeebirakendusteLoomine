@@ -31,8 +31,51 @@ $(window).load(function() {
 	
 });
 
+// XML-põhiste keelte kooskasutus
+function fillXML(){
 
+	$.get("getMyXML",function(data){
 
+		  var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Korterid</th><th>Majad</th></tr></thead><tbody>';
+	    var end = '</tbody></table>';
+
+  		var elamud = data.getElementsByTagName("elamu");
+      var majad = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
+      var korterid = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
+
+  		var content = "";
+
+  		for(i = 0 ; i < elamud.length; i++){
+  			content +="<tr>";
+
+        content +="<td>";
+        content += info(elamud[i]);
+        content +="</td>";
+
+  			content +="<td>";
+  			content += info(majad[i]);
+  			content +="</td>";
+
+  			content +="<td>";
+  			content += info(korterid[i]);
+  			content +="</td>";
+
+  			content +="</tr>";
+  		}
+  		document.getElementById("XML_stuff_here").innerHTML =start+content+end;      
+ 	});
+}
+
+function info(obj){
+	if(typeof obj === "undefined"){
+		return "";	
+	}
+	else{
+		return obj.getElementsByTagName("aadress")[0].innerHTML +" (" + obj.getAttribute("suurus") +")";
+	} 
+}
+
+fillXML();
 
 
 

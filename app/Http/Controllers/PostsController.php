@@ -65,4 +65,26 @@ class PostsController extends Controller
                 ));
         }
     }
+
+    public function getMyXML(){
+
+        if(\Request::ajax()){
+
+            $filename ="myxml.xml"; // public folder
+
+            try
+            {
+                $contents = \File::get($filename);
+            }
+            catch (Illuminate\Filesystem\FileNotFoundException $exception)
+            {
+                die("The file doesn't exist");
+            }
+
+            return \Response::make($contents,200)->header('Content-Type','application/xml');
+
+        }
+    }
+
+
 }

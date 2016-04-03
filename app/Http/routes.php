@@ -35,6 +35,9 @@ Route::group(['middleware' => ['web']], function () {
     /* Data push */
     Route::get("/getLatestEstate", "PostsController@getLatestEstate");
 
+    /* XML-põhiste keelte kooskasutatu */
+    Route::get("/getMyXML", "PostsController@getMyXML");
+
     /** Bank Link routing */
     Route::get('/dbqueryview', 'BankController@bankQuery');
     Route::post('callback/seb', 'BankController@callback');

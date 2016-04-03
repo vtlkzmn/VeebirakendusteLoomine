@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elamud xmlns:k="http://www.myspecialurl_korterid.com" xmlns:m="http://www.myspecialurl2_majad.com">
+    <k:elamu suurus="keskmine">
+        <aadress>Kuuse 21 - 12</aadress>
+        <hind>50 000</hind>
+    </k:elamu>
+    <m:elamu suurus="suur">
+        <aadress>Metalli 3</aadress>
+        <hind>300 000</hind>
+    </m:elamu>
+    <k:elamu suurus="vaike">
+        <aadress>Mündi 55b</aadress>
+        <hind>10 000</hind>
+    </k:elamu>
+    <m:elamu suurus="suur">
+        <aadress>Terase 12</aadress>
+        <hind>270 000</hind>
+    </m:elamu>
+    <m:elamu suurus="keskmine">
+        <aadress>Pronksi 3</aadress>
+        <hind>120 000</hind>
+    </m:elamu>
+</elamud>

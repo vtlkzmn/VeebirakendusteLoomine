@@ -31,6 +31,14 @@
     </div>
 
 
+    <!-- XML-põhiste keelte kooskasutus-->
+
+    <h2>XML-põhiste keelte kooskasutus</h2>
+
+    <div id="XML_stuff_here">
+
+    </div>
+
     <!-- Leheosade hilisem laadimine -->
 
     <h2>Leheosade hilisem laadimine: </h2>
