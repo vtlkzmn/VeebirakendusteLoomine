@@ -36,12 +36,12 @@ function fillXML(){
 
 	$.get("getMyXML",function(data){
 
-		  var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Korterid</th><th>Majad</th></tr></thead><tbody>';
+		  var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Majad</th><th>Korterid</th></tr></thead><tbody>';
 	    var end = '</tbody></table>';
 
   		var elamud = data.getElementsByTagName("elamu");
-      var majad = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
-      var korterid = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
+      var korterid = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
+      var majad = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
 
   		var content = "";
 
