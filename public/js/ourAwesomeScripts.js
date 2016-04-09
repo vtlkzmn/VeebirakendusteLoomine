@@ -24,8 +24,12 @@ function poll(){
 
 $(window).load(function() {
 
-	var new_src = $('#leheosade_hilisem').attr('data-addsrc');
-	document.getElementById("leheosade_hilisem").src = new_src;
+	fillXML();
+
+	if(document.getElementById("leheosade_hilisem") != null){
+		var new_src = $('#leheosade_hilisem').attr('data-addsrc');
+		document.getElementById("leheosade_hilisem").src = new_src;	
+	}
 
 	poll();
 	
@@ -34,36 +38,41 @@ $(window).load(function() {
 // XML-põhiste keelte kooskasutus
 function fillXML(){
 
-	$.get("getMyXML",function(data){
 
-		  var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Korterid</th><th>Majad</th></tr></thead><tbody>';
-	    var end = '</tbody></table>';
 
-  		var elamud = data.getElementsByTagName("elamu");
-      var majad = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
-      var korterid = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
+	if(document.getElementById("XML_stuff_here") != null){  // et valel lehel ei ole
 
-  		var content = "";
+		$.get("getMyXML",function(data){
 
-  		for(i = 0 ; i < elamud.length; i++){
-  			content +="<tr>";
+			var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Majad</th><th>Korterid</th></tr></thead><tbody>';
+		    var end = '</tbody></table>';
 
-        content +="<td>";
-        content += info(elamud[i]);
-        content +="</td>";
+	  		var elamud = data.getElementsByTagName("elamu");
+	   		var korterid = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
+	    	var majad = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
 
-  			content +="<td>";
-  			content += info(majad[i]);
-  			content +="</td>";
+	  		var content = "";
 
-  			content +="<td>";
-  			content += info(korterid[i]);
-  			content +="</td>";
+	  		for(i = 0 ; i < elamud.length; i++){
+	  			content +="<tr>";
 
-  			content +="</tr>";
-  		}
-  		document.getElementById("XML_stuff_here").innerHTML =start+content+end;      
- 	});
+	    	    content +="<td>";
+	     	   	content += info(elamud[i]);
+	    	    content +="</td>";
+
+	  			content +="<td>";
+	  			content += info(majad[i]);
+	  			content +="</td>";
+
+	  			content +="<td>";
+	  			content += info(korterid[i]);
+	  			content +="</td>";
+
+	  			content +="</tr>";
+	  		}
+	  		document.getElementById("XML_stuff_here").innerHTML =start+content+end;      
+	 	});		
+	}
 }
 
 function info(obj){
@@ -75,7 +84,6 @@ function info(obj){
 	} 
 }
 
-fillXML();
 
 
 
