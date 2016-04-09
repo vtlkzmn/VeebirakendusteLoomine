@@ -55,7 +55,7 @@
                                     Password?</a>
                                 <a href="/register" class="btn btn-primary">No account yet? Register</a>
                                 <br>
-                                <a href="{{route('facebookLogin')}}"><h1>Login with facebook.</h1></a>
+                                <a href="{{route('facebookLogin')}}">Login with facebook</a>
                             </div>
                         </div>
 
