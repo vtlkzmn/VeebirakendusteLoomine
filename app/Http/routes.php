@@ -32,15 +32,27 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index'); //Redirects user back to page he was on before
 
-    /* Data push */
+    /** Data push */
     Route::get("/getLatestEstate", "PostsController@getLatestEstate");
 
-    /* XML-põhiste keelte kooskasutatu */
+    /** XML-põhiste keelte kooskasutatu */
     Route::get("/getMyXML", "PostsController@getMyXML");
 
     /** Bank Link routing */
     Route::get('/dbqueryview', 'BankController@bankQuery');
     Route::post('callback/seb', 'BankController@callback');
     Route::post('cancel/seb', 'BankController@cancel');
+
+
+    /** Facebook login*/
+    Route::get('facebook-login', [
+        'uses' => 'FacebookController@facebookLogin',
+        'as'   => 'facebookLogin'
+    ]);
+
+    Route::get('facebook-login-callback', [
+        'uses' => 'FacebookController@facebookCallback',
+        'as'   => 'facebookCallback'
+    ]);
 });
 
