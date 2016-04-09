@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '1700830200170140',
         'client_secret' => 'a3206e949384c60dc732571f2ab7a395',
-        'redirect' => 'https://protected-journey-16130.herokuapp.com/facebook-login-callback',
+        'redirect' => 'http://cryptic-ravine-26647.herokuapp.com//facebook-login-callback',
     ],
 
 ];
