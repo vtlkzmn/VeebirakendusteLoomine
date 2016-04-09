@@ -21,7 +21,7 @@
     <script type="text/javascript" src="/js/ourAwesomeScripts.js"></script>
 
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
