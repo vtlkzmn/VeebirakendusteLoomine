@@ -10,15 +10,20 @@ function bonusButton() {
 
 /* data push */
 function poll(){
-  $.get("getLatestEstate",function(data){
-    $("#getLatestEstate").html("<b>Created:</b> " + data.created 
-    	+ "<br>" + "<b>Subject:</b> " + data.subject
-    	+ "<br>" + "<b>Body:</b> " + data.body);
-  });
 
-  setTimeout(function(){
-    poll();
-  }, 10000); 
+	if(document.getElementById("getLatestEstate") != null){
+  
+	  $.get("getLatestEstate",function(data){
+	    $("#getLatestEstate").html("<b>Created:</b> " + data.created 
+	    	+ "<br>" + "<b>Subject:</b> " + data.subject
+	    	+ "<br>" + "<b>Body:</b> " + data.body);
+	  });
+
+	  setTimeout(function(){
+	    poll();
+	  }, 10000); 
+
+	}
 
 }
 
