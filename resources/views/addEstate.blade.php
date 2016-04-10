@@ -13,15 +13,15 @@
                     <h3> Put your place up for reviews!</h3>
 
                     <div class="form-group">
-                        <textarea placeholder="Address" name="subject" class="form-control"></textarea>
+                        <textarea id="address-offline" placeholder="Address" name="subject" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <textarea placeholder="Description" maxlength="140" name="body" class="form-control"></textarea>
+                        <textarea id="description-offline" placeholder="Description" maxlength="140" name="body" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary"
+                        <button id="addEstate-button" type="submit" class="btn btn-primary"
                                 title="You will not be able to change it (maybe in the future)!">Add Post
                         </button>
                     </div>
