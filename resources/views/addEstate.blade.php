@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.no_cache_layout')
 
 @section('content')
 

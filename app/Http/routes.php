@@ -6,6 +6,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'PagesController@home');
     Route::get('/estates', 'PagesController@estates');
     Route::get('/addEstate', 'PagesController@addEstate');
+    Route::get('/offline_addEstate', 'PagesController@offline_addEstate');
+
     Route::get('/contact', 'PagesController@contact');
     Route::get('/register', 'PagesController@register');
     Route::get('/estates/{post}', 'PostsController@reviews');

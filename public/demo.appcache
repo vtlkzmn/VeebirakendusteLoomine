@@ -1,0 +1,36 @@
+CACHE MANIFEST
+#addEstate on mitte cachitud vastavalt layoutile
+#tegelt siia on hea lisada ka lehti, sest kui klient ei külasta, siis saab siia tulla
+/css/bootstrap.min.css
+/css/font.css
+/css/googlemaps.css
+/css/login.css
+/css/media.css
+/css/style.css
+/js/bootstrap.min.js
+/js/jquery-1.12.3.min.js
+/js/jquery.js
+/js/ourAwesomeScripts.js
+/myxml.xml
+/img/add_loaded_small.jpg
+/img/cool_apartment1_edit.jpg
+/img/cool_apartment2_edit.jpg
+/img/logo.png
+/img/sadpuppy.png
+/img/flags/ee_logo.png
+/img/flags/en_logo.png
+/img/flags/ru_logo.png
+/fonts/glyphicons-halflings-regular.eot
+/fonts/glyphicons-halflings-regular.svg
+/fonts/glyphicons-halflings-regular.ttf
+/fonts/glyphicons-halflings-regular.woff
+/fonts/glyphicons-halflings-regular.woff2
+/
+/estates
+/contact
+
+NETWORK:
+*
+
+FALLBACK:
+/addEstate /offline_addEstate

@@ -18,6 +18,11 @@ class PagesController extends Controller
         return view('addEstate');
     }
 
+    public function offline_addEstate()
+    {
+        return view('offline_addEstate');
+    }
+
     public function reviews()
     {
         return view('reviews');

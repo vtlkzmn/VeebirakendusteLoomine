@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xml:lang="en" manifest="demo.appcache">
+<html lang="en" xml:lang="en">
 
 <head>
     <title>Veebirakenduste projekt</title>
