@@ -37,8 +37,8 @@ class FacebookController extends Controller
 
     private function createUser($user){
         $user = User::create([
-            'name' => $user->name,
-            'email' => $user->email,
+            'name' => $user->getName(),
+            'email' => $user->getEmail(),
             'password' => bcrypt(123456),
         ]);
 
