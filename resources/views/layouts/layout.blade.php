@@ -15,9 +15,9 @@
     <link rel="stylesheet" type="text/css" href="/css/media.css">
 
     <!-- JavaScripts -->
-    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="/js/ourAwesomeScripts.js"></script>
 
     <!-- Fonts -->
