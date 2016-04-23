@@ -11,11 +11,11 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img longdesc="image" src="img/cool_apartment1_edit.jpg" alt="cool_apartment1_edit.jpg">
+                <img longdesc="image" src="img/cool_apartment1_edit.jpg" alt="">
             </div>
 
             <div class="item">
-                <img longdesc="image" src="img/cool_apartment2_edit.jpg" alt="cool_apartment2_edit.jpg">
+                <img longdesc="image" src="img/cool_apartment2_edit.jpg" alt="">
             </div>
         </div>
 
@@ -45,7 +45,7 @@
 
     <div>
         <div>
-            <img longdesc="image" alt="add_loaded_small.jpg" data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
+            <img longdesc="image" alt="" data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
         </div>
     </div>
 
