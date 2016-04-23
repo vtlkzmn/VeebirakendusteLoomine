@@ -9,6 +9,14 @@ body {
     margin-bottom: 70px;
 }
 
+#google-map{
+    border: 0;
+}
+
+#header-keskele{
+    text-align: center;
+}
+
 #leheosade_hilisem{
     height: 105px;
     width:400px;  
