@@ -39,6 +39,7 @@ body {
     display:table-column;
     width:200px;
     alignment: top;
+    top: auto;
     /*border-bottom: 2px solid black;*/
 }
 
