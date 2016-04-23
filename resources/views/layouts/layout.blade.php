@@ -76,7 +76,7 @@
                                 @foreach (\Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
                                         <li>
-                                            <a href="/lang/{{ $lang }}"><img
+                                            <a href="/lang/{{ $lang }}"><img alt="flag-logo"
                                                         src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
                                         </li>
                                     @endif
