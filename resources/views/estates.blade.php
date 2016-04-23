@@ -41,7 +41,7 @@
                                     <form method="POST" action="/estates/{{ $post -> id }}/deleteEstate">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-block">
-                                                <spnan class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                             </button>
                                         </div>
                                     </form>
