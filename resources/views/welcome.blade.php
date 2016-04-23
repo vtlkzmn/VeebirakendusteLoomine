@@ -45,7 +45,7 @@
 
     <div>
         <div>
-            <img data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
+            <img data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive" src="" alt="ad-hilisem-laadimine"/>
         </div>
     </div>
 
