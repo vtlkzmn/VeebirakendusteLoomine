@@ -91,7 +91,7 @@
     </nav>
 
     <!-- Main container -->
-    <div class="container" style="margin-top: 15px;">
+    <div id="main-container" class="container">
         @yield('content')
     </div>
 

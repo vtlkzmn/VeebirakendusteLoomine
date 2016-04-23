@@ -17,6 +17,10 @@ body {
     text-align: center;
 }
 
+#main-container{
+    margin-top: 15px;
+}
+
 #leheosade_hilisem{
     height: 105px;
     width:400px;  
