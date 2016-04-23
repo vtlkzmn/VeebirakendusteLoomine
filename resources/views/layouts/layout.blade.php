@@ -76,8 +76,7 @@
                                 @foreach (\Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
                                         <li>
-                                            <a href="/lang/{{ $lang }}"><img alt="{{ $lang }}_logo.png" longdesc="image"
-                                                        src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
+                                            <a href="/lang/{{ $lang }}"><img alt="flag-logo" src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
                                         </li>
                                     @endif
                                 @endforeach
@@ -91,7 +90,7 @@
     </nav>
 
     <!-- Main container -->
-    <div class="container" style="margin-top: 15px;">
+    <div id="main-container" class="container">
         @yield('content')
     </div>
 

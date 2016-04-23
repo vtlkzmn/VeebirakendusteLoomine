@@ -45,7 +45,7 @@
 
     <div>
         <div>
-            <img longdesc="image" alt="add_loaded_small.jpg" data-addsrc="img/add_loaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
+            <img longdesc="image" alt="add_loaded_small.jpg" data-addsrc="img/add_loaded_small.jpg" src="img/add_notloaded_small.jpg" id="leheosade_hilisem" class="img-responsive"/>
         </div>
     </div>
 

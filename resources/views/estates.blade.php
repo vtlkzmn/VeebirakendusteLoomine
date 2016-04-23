@@ -7,7 +7,7 @@
             <!-- If there are no posts, display a message -->
 
             @if(count($posts) === 0)
-                <h3 style="text-align: center">Ühtegi elamut pole veel lisatud :(</h3>
+                <h3 id="header-keskele">Ühtegi elamut pole veel lisatud :(</h3>
                 <img class="img-responsive" alt="How could you do this" src="/img/sadpuppy.png">
 
                 <!-- Otherwise display a table with all estates -->
@@ -21,7 +21,7 @@
                         <div  class="div-table-col">Drop post</div>
                     </div>
 
-                    <section class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
+                    <div class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
                         <!-- Create a table row for each estate -->
                         @foreach($posts as $post)
 
@@ -50,7 +50,7 @@
                             </div>
 
                         @endforeach
-                    </section>
+                    </div>
 
                 </div>
             @endif
