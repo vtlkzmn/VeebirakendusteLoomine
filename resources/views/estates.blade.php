@@ -21,7 +21,7 @@
                         <div  class="div-table-col">Drop post</div>
                     </div>
 
-                    <section class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
+                    <div class="posts endless-pagination" data-next-page="{{ $posts->nextPageUrl() }}">
                         <!-- Create a table row for each estate -->
                         @foreach($posts as $post)
 
@@ -50,7 +50,7 @@
                             </div>
 
                         @endforeach
-                    </section>
+                    </div>
 
                 </div>
             @endif
