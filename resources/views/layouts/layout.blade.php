@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand"><img alt="Kodu" src="/img/logo.png"></a>
+                <a href="/" class="navbar-brand"><img alt="logo" src="/img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,13 +70,13 @@
                                 <!-- Flags -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img alt="flag" src="/img/flags/{{ \App::getLocale() }}_logo.png">
+                                <img alt="{{ \App::getLocale() }}_logo" src="/img/flags/{{ \App::getLocale() }}_logo.png">
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach (\Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
                                         <li>
-                                            <a href="/lang/{{ $lang }}"><img alt="flag"
+                                            <a href="/lang/{{ $lang }}"><img alt="{{ $lang }}_logo"
                                                         src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
                                         </li>
                                     @endif
