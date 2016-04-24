@@ -15,9 +15,9 @@
     <link rel="stylesheet" type="text/css" href="/css/media.css">
 
     <!-- JavaScripts -->
-    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="/js/ourAwesomeScripts.js"></script>
 
     <!-- Fonts -->
@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="/" class="navbar-brand"><img alt="Kodu" src="/img/logo.png"></a>
+                <a href="/" class="navbar-brand"><img alt="logo.png" longdesc="image" src="/img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,14 +70,13 @@
                                 <!-- Flags -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img alt="blaa" src="/img/flags/{{ \App::getLocale() }}_logo.png">
+                                <img alt="{{ \App::getLocale() }}_logo.png" longdesc="image" src="/img/flags/{{ \App::getLocale() }}_logo.png">
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach (\Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
                                         <li>
-                                            <a href="/lang/{{ $lang }}"><img alt="blaa"
-                                                        src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
+                                            <a href="/lang/{{ $lang }}"><img alt="flag-logo" src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
                                         </li>
                                     @endif
                                 @endforeach
@@ -91,7 +90,7 @@
     </nav>
 
     <!-- Main container -->
-    <div class="container" style="margin-top: 15px;">
+    <div id="main-container" class="container">
         @yield('content')
     </div>
 

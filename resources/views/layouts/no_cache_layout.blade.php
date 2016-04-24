@@ -70,14 +70,14 @@
                                 <!-- Flags -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="/img/flags/{{ \App::getLocale() }}_logo.png">
+                                <img alt="flag-logo" src="/img/flags/{{ \App::getLocale() }}_logo.png">
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach (\Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
                                         <li>
-                                            <a href="/lang/{{ $lang }}"><img
-                                                        src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
+                                            <a href="/lang/{{ $lang }}">
+                                                <img alt="flag-logo" src="/img/flags/{{ $lang }}_logo.png"> {{$language}}</a>
                                         </li>
                                     @endif
                                 @endforeach
@@ -91,7 +91,7 @@
     </nav>
 
     <!-- Main container -->
-    <div class="container" style="margin-top: 15px;">
+    <div id="main-container" class="container">
         @yield('content')
     </div>
 
