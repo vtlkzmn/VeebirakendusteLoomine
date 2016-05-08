@@ -20,13 +20,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('estates/{post}/deleteReviews', 'PostsController@deleteReviews');
     Route::post('estates/{post}/deleteEstate', 'PostsController@deleteEstate');
 
-    /** Ajax */
-    Route::get('/getRequest', function () {
-        if (Request::ajax()) {
-            return 'Completed with AJAX';
-        }
-    });
-
     /** Language switching */
     Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
 

@@ -1,213 +1,81 @@
-/** JavaScript bonus */
-/* var boonus = 0;
-function bonusButton() {
-    boonus += 1;
-    document.getElementById("points").innerHTML = "Boonus: " + boonus;
-} */
-
-
-// CDN
-if (typeof jQuery == 'undefined') {
-	document.write(unescape("%3Cscript src='/js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
-	document.write(unescape("%3Cscript src='/js/jquery-1.12.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+function poll() {
+	null != document.getElementById("getLatestEstate") && ($.get("getLatestEstate", function(e) {
+		$("#getLatestEstate").html("<b>Created:</b> " + e.created + "<br><b>Subject:</b> " + e.subject + "<br><b>Body:</b> " + e.body)
+	}), setTimeout(function() {
+		poll()
+	}, 1e4))
 }
 
-
-
-
-/* data push */
-function poll(){
-
-	if(document.getElementById("getLatestEstate") != null){
-  
-	  $.get("getLatestEstate",function(data){
-	    $("#getLatestEstate").html("<b>Created:</b> " + data.created 
-	    	+ "<br>" + "<b>Subject:</b> " + data.subject
-	    	+ "<br>" + "<b>Body:</b> " + data.body);
-	  });
-
-	  setTimeout(function(){
-	    poll();
-	  }, 10000); 
-
-	}
-
-}
-
-/* kontrollime kas on midagi lisada andmebaasi */
-
-function addToDatabase(a_last, d_last){
-	// ajaxiga või millegi muuga peaks selle nüüd saatma 
+function addToDatabase(e, t) {
 	$.ajax({
-        type: "POST",
-        url: "/estates/addEstate",
-        data: "subject="+a_last+"&body="+d_last, 
-        success: function(data)
-        {
-            alert("Edukalt lisatud andmebaasi storage olnud failid!"); 
-        },
-        error: function(data){
-        	// online method ei ole väga hea..
-        	// seega peab kordama, kui ebaõnnestus
-        	setTimeout(function(){
-		   		addToDatabase(a_last,d_last);
-		 	}, 10000); 
-        }
-    });
+		type: "POST",
+		url: "/estates/addEstate",
+		data: "subject=" + e + "&body=" + t,
+		success: function(e) {
+			alert("Edukalt lisatud andmebaasi storage olnud failid!")
+		},
+		error: function(a) {
+			setTimeout(function() {
+				addToDatabase(e, t)
+			}, 1e4)
+		}
+	})
 }
 
-function kontrolliStorage(){
-
-	if(window.navigator.onLine){
-		var a_last = localStorage.address_offline_last;
-		var d_last = localStorage.description_offline_last;
-		if(typeof a_last === "undefined" || typeof d_last === "undefined"){
-		// empty storage
-		}
-		else{
-			
-			addToDatabase(a_last,d_last);
-			// eemaldame storge-st
-			localStorage.removeItem("address_offline_last");
-			localStorage.removeItem("description_offline_last");						
-		}
-	}
-	else{
-		// ootame veel, millal online tuleb
-		setTimeout(function(){
-		   	kontrolliStorage();
-		}, 10000); 
-	}	
+function kontrolliStorage() {
+	if (window.navigator.onLine) {
+		var e = localStorage.address_offline_last,
+			t = localStorage.description_offline_last;
+		"undefined" == typeof e || "undefined" == typeof t || (addToDatabase(e, t), localStorage.removeItem("address_offline_last"), localStorage.removeItem("description_offline_last"))
+	} else setTimeout(function() {
+		kontrolliStorage()
+	}, 1e4)
 }
 
-kontrolliStorage();
+function fillXML() {
+	null != document.getElementById("XML_stuff_here") && $.get("getMyXML", function(e) {
+		var t = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Majad</th><th>Korterid</th></tr></thead><tbody>',
+			a = "</tbody></table>",
+			n = e.getElementsByTagName("elamu"),
+			o = e.getElementsByTagNameNS("http://www.myspecialurl_korterid.com", "elamu"),
+			l = e.getElementsByTagNameNS("http://www.myspecialurl2_majad.com", "elamu"),
+			d = "";
+		for (i = 0; i < n.length; i++) d += "<tr>", d += "<td>", d += info(n[i]), d += "</td>", d += "<td>", d += info(l[i]), d += "</td>", d += "<td>", d += info(o[i]), d += "</td>", d += "</tr>";
+		document.getElementById("XML_stuff_here").innerHTML = t + d + a
+	})
+}
 
-window.addEventListener("online", function(e) {
-	kontrolliStorage();
-}, false);
-
-$(window).load(function() {
-
-	/* võrguühenduseta funktsionaalus  */
-	if(document.getElementById("addEstate-button") != null){
-
-		$("#addEstate-button").click(function(event)
-		{
-			if(window.navigator.onLine){
-				var a = document.getElementById("address-offline").value;
-				var d = document.getElementById("description-offline").value;
-				if(a == "" || b ==  ""){
-					alert("Pead täitma väljad!");
-					event.preventDefault();
-				}
+function info(e) {
+	return "undefined" == typeof e ? "" : e.getElementsByTagName("aadress")[0].innerHTML + " (" + e.getAttribute("suurus") + ")"
+}
+"undefined" == typeof jQuery && (document.write(unescape("%3Cscript src='/js/jquery.js' type='text/javascript'%3E%3C/script%3E")), document.write(unescape("%3Cscript src='/js/jquery-1.12.3.min.js' type='text/javascript'%3E%3C/script%3E"))), kontrolliStorage(), window.addEventListener("online", function(e) {
+	kontrolliStorage()
+}, !1), $(window).load(function() {
+	if (null != document.getElementById("addEstate-button") && $("#addEstate-button").click(function(e) {
+			if (window.navigator.onLine) {
+				var t = document.getElementById("address-offline").value,
+					a = document.getElementById("description-offline").value;
+				("" == t || "" == b) && (alert("Pead täitma väljad!"), e.preventDefault())
+			} else {
+				e.preventDefault();
+				var t = document.getElementById("address-offline").value,
+					a = document.getElementById("description-offline").value;
+				localStorage.setItem("address_offline_last", t), localStorage.setItem("description_offline_last", a), document.getElementById("address-offline").value = "", document.getElementById("description-offline").value = "", alert('Salvestasime aadressi:"' + t + '" ja kirjelduse: "' + a + '"\nKui interneti ühenduse tuleb tagasi, siis see lisatakse!')
 			}
-			else{
-				event.preventDefault(); 
-				var a = document.getElementById("address-offline").value;
-				var d = document.getElementById("description-offline").value;
-				localStorage.setItem("address_offline_last",a);
-				localStorage.setItem("description_offline_last",d);
-				// muudame tühjaks, et tunduks, et midagi lahedat toimus!
-				document.getElementById("address-offline").value = "";
-				document.getElementById("description-offline").value = "";				
-				alert("Salvestasime aadressi:\""+a + "\" ja kirjelduse: \"" + d + "\"\nKui interneti ühenduse tuleb tagasi, siis see lisatakse!");
-			}
-		});
+		}), fillXML(), null != document.getElementById("leheosade_hilisem")) {
+		var e = $("#leheosade_hilisem").attr("data-addsrc");
+		document.getElementById("leheosade_hilisem").src = e
 	}
-
-	fillXML();
-
-	if(document.getElementById("leheosade_hilisem") != null){
-		var new_src = $('#leheosade_hilisem').attr('data-addsrc');
-		document.getElementById("leheosade_hilisem").src = new_src;	
+	poll()
+}), $(document).ready(function() {
+	function e() {
+		var e = $(".endless-pagination").data("next-page");
+		null !== e && (clearTimeout($.data(this, "scrollCheck")), $.data(this, "scrollCheck", setTimeout(function() {
+			var t = $(window).height() + $(window).scrollTop() + 100;
+			t >= $(document).height() && $.get(e, function(e) {
+				$(".endless-pagination").data("next-page", e.next_page), $(".posts").append(e.posts)
+			})
+		}, 350)))
 	}
-
-	poll();
-	
-});
-
-// XML-põhiste keelte kooskasutus
-function fillXML(){
-
-
-
-	if(document.getElementById("XML_stuff_here") != null){  // et valel lehel ei ole
-
-		$.get("getMyXML",function(data){
-
-			var start = '<table class="table"><thead><tr><th>Kõik elamud</th><th>Majad</th><th>Korterid</th></tr></thead><tbody>';
-		    var end = '</tbody></table>';
-
-	  		var elamud = data.getElementsByTagName("elamu");
-	   		var korterid = data.getElementsByTagNameNS("http://www.myspecialurl_korterid.com","elamu");
-	    	var majad = data.getElementsByTagNameNS("http://www.myspecialurl2_majad.com","elamu");
-
-	  		var content = "";
-
-	  		for(i = 0 ; i < elamud.length; i++){
-	  			content +="<tr>";
-
-	    	    content +="<td>";
-	     	   	content += info(elamud[i]);
-	    	    content +="</td>";
-
-	  			content +="<td>";
-	  			content += info(majad[i]);
-	  			content +="</td>";
-
-	  			content +="<td>";
-	  			content += info(korterid[i]);
-	  			content +="</td>";
-
-	  			content +="</tr>";
-	  		}
-	  		document.getElementById("XML_stuff_here").innerHTML =start+content+end;      
-	 	});		
-	}
-}
-
-function info(obj){
-	if(typeof obj === "undefined"){
-		return "";	
-	}
-	else{
-		return obj.getElementsByTagName("aadress")[0].innerHTML +" (" + obj.getAttribute("suurus") +")";
-	} 
-}
-
-
-
-
-$(document).ready(function(){
-	$('#getRequest').click(function(){
-		$.get('/getRequest', function(data){
-			console.log(data);
-		});
-	});
-});
-
-
-
-//uue posti lehe laadimine toimub ilma terve lehte uue laadimist AJAXi kaudu
-$(document).ready(function(){
-	$(window).scroll(fetchPosts);
-	function fetchPosts() {
-		var page = $('.endless-pagination').data('next-page');
-
-		if (page !== null) {
-			clearTimeout( $.data( this, "scrollCheck" ));
-
-			$.data( this, "scrollCheck", setTimeout(function() {
-				var scroll_position_for_posts_load = $(window).height() + $(window).scrollTop() + 100;
-
-				if(scroll_position_for_posts_load >= $(document).height()){
-					$.get(page, function(data){
-						$('.endless-pagination').data('next-page', data.next_page);
-						$('.posts').append(data.posts);
-                        console.log("AJAX works pretty good");
-					});
-				}
-			}, 350))
-		}
-	}
+	$(window).scroll(e)
 });
