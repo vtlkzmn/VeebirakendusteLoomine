@@ -42,14 +42,19 @@ class PostsController extends Controller
 
     public function addEstate(Request $request)
     {
+        $subject = $request->subject;
+        $body = $request->body;
+        if (strpos($subject, '<script>') === false && strpos($body, '<script>') === false) {
+            DB::table('posts')->insert([
+                'subject' => $subject,
+                'body' => $body,
+                "created_at" => new DateTime
+            ]);
 
-        DB::table('posts')->insert([
-            'subject' => $request->subject,
-            'body' => $request->body,
-            "created_at" => new DateTime
-        ]);
-
-        return back();
+            return back();
+        }
+        else
+            return 'noo, please';
     }
 
     public function getLatestEstate(){
@@ -58,11 +63,15 @@ class PostsController extends Controller
             $created = $newest_progress->created_at;
             $subject = $newest_progress->subject;
             $body = $newest_progress->body;
+            if (strpos($subject, '<script>') === false && strpos($body, '<script>') === false) {
                 return \Response::json(array(
                     'created' => $created,
-                    'subject'   => $subject,
-                    'body'   => $body
+                    'subject' => $subject,
+                    'body' => $body
                 ));
+            }
+            else
+                return 'Noo-no-no';
         }
     }
 
