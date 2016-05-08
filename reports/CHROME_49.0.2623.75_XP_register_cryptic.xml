@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="register_cryptic"
+    errors="0" failures="0" hostname="" id="" package="register_cryptic" skipped="0"
+    tests="1" time="22.97" timestamp="Sun, 08 May 2016 11:42:20 GMT">
+  
+    <testcase name="Registreerimine: Läheme register lehele, täidame väljad, submit, logime välja, kontrollime logimist" time="22.97" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>

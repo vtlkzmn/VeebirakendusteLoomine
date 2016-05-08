@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="4">
+
+  <testsuite name="login_cryptic"
+    errors="0" failures="0" hostname="" id="" package="login_cryptic" skipped="0"
+    tests="4" time="19.60" timestamp="Sun, 08 May 2016 11:27:53 GMT">
+  
+    <testcase name="Login Page: Kontrollime, et kõik oleks olemas!" time="5.804" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Login Page: Proovime valede andmetega sisse logida!" time="3.087" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Login Page: Logime sisse ja kontrollime, kas õnnestus!" time="2.901" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Login Page: Logime välja ja kontrollime, kas õnnestus!" time="7.804" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>
