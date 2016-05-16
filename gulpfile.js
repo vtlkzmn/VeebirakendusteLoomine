@@ -46,7 +46,12 @@ elixir.extend('compress', function() {
 });
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.stylesIn('public/css');
+    mix.scripts([
+        'ourAwesomeScripts.js',
+        'bootstrap.min.js',
+        'jquery-1.12.3.min.js'
+    ]);
     mix.compress();
 });
 
