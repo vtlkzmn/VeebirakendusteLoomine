@@ -48,10 +48,10 @@ elixir.extend('compress', function() {
 elixir(function(mix) {
     mix.stylesIn('public/css');
     mix.scripts([
-        'ourAwesomeScripts.js',
+        'jquery-1.12.3.min.js',
         'bootstrap.min.js',
         'jquery.js',
-        'jquery-1.12.3.min.js'
+        'ourAwesomeScripts.js'
     ]);
     mix.compress();
 });
