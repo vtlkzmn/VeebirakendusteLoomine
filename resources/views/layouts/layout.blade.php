@@ -6,8 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf_token" content="{{ csrf_token() }}"/>
     <meta charset="UTF-8">
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/css/all.css">
+        <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/css/googlemaps.css">
+    <link rel="stylesheet" type="text/css" href="/css/media.css">
+    <!-- JavaScripts -->
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" defer></script>
+    <script src="/js/bootstrap.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery.js" defer></script>
+    <script type="text/javascript" src="/js/ourAwesomeScripts.js" defer></script>
+    <!-- Fonts -->
+    <link href='/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="wrap">
@@ -80,7 +91,5 @@
     </nav>
 </div>
 
-<!-- Scripts -->
-<script src="/js/all.js"></script>
 </body>
 </html>
