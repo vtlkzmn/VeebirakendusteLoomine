@@ -50,6 +50,7 @@ elixir(function(mix) {
     mix.scripts([
         'ourAwesomeScripts.js',
         'bootstrap.min.js',
+        'jquery.js',
         'jquery-1.12.3.min.js'
     ]);
     mix.compress();
