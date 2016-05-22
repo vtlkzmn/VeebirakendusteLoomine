@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="/css/all.css">
+    <!-- Scripts -->
+    <script src="/js/all.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -77,7 +79,5 @@
     </nav>
 </div>
 
-<!-- Scripts -->
-<script src="/js/all.js"></script>
 </body>
 </html>
